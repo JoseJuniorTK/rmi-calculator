@@ -1,6 +1,8 @@
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ClienteCalculadora {
@@ -79,28 +81,48 @@ public class ClienteCalculadora {
     System.out.println("=====================================");
   }
 
+  private static Numero[] genericOperationsMenu(String title, String firstInput, String secondInput) {
+    System.out.println("SOMA");
+    System.out.println("================");
+
+    System.out.print("Digite o primeiro numero: ");
+    Numero num1 = new NumeroImpl(reader.nextInt());
+
+    System.out.print("Digite o segundo numero: ");
+    Numero num2 = new NumeroImpl(reader.nextInt());
+    System.out.println("================");
+
+    Numero[] numbers = { num1, num2 };
+
+    return numbers;
+  }
+
   private static void calculate(int choice, Calculadora calc) {
 
     try {
+      Numero[] numbers;
+      Numero result;
       switch (choice) {
         case 1:
-          System.out.println("SOMA");
-          System.out.println("================");
+          numbers = genericOperationsMenu(
+              "SOMA",
+              "Digite o primeiro numero",
+              "Digite o segundo numero");
 
-          System.out.print("Digite o primeiro numero: ");
-          Numero num1 = new NumeroImpl(reader.nextInt());
-
-          System.out.print("Digite o segundo numero: ");
-          Numero num2 = new NumeroImpl(reader.nextInt());
-          System.out.println("================");
-
-          Numero result = calc.soma(num1, num2);
+          result = calc.soma(numbers[0], numbers[1]);
           System.out.println("Resultado da soma: " + result.getValor());
           waitForEnter();
           break;
 
         case 2:
-          System.out.println("SUBTRACAO");
+          numbers = genericOperationsMenu(
+              "SUBTRACAO",
+              "Digite o primeiro numero",
+              "Digite o segundo numero");
+
+          result = calc.subtrai(numbers[0], numbers[1]);
+          System.out.println("Resultado da subtracao: " + result.getValor());
+          waitForEnter();
           break;
 
         case 3:
