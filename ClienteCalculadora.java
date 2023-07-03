@@ -5,9 +5,11 @@ public class ClienteCalculadora {
   public static void main(String[] args) {
     try {
 
-      int IP_SERVIDOR =  
+      String IP_SERVIDOR =  "127.0.0.1"; // endereco do servidor na rede
+      int PORTA_SERVIDOR =  1099; //porta padrao
+
         // Localiza o registry. É possível usar endereço/IP porta
-       Registry registry = LocateRegistry.getRegistry(1099);
+       Registry registry = LocateRegistry.getRegistry(PORTA_SERVIDOR);
        // Consulta o registry e obtém o stub para o objeto remoto
        Calculadora calc = (Calculadora) registry
            .lookup("calculadora");
