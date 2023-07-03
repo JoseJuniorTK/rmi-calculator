@@ -1,8 +1,7 @@
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class ClienteCalculadora {
@@ -72,12 +71,13 @@ public class ClienteCalculadora {
     System.out.println("4 - MULTIPLICACAO");
     System.out.println("5 - POTENCIA");
     System.out.println("6 - RAIZ QUADRADA");
-    System.out.println("7 - PORCENTAGEM");
+    System.out.println("7 - PORCENTAGEM RELATIVA");
     System.out.println("8 - LOGARITMO");
     System.out.println("9 - CONVERSAO REAL -> DOLAR");
     System.out.println("10 - CONVERSAO DOLAR -> REAL");
     System.out.println("11 - CONVERSAO METROS -> KILOMETROS");
     System.out.println("12 - CONVERSAO KILOMETROS -> METROS");
+    System.out.println("13 - CONVERSAO PORCENTAGEM -> DECIMAL ");
     System.out.println("=====================================");
   }
 
@@ -109,7 +109,7 @@ public class ClienteCalculadora {
               "Digite o primeiro numero",
               "Digite o segundo numero");
 
-          result = calc.soma(numbers[0], numbers[1]);
+          result = calc.somar(numbers[0], numbers[1]);
           System.out.println("Resultado da soma: " + result.getValor());
           waitForEnter();
           break;
@@ -120,7 +120,7 @@ public class ClienteCalculadora {
               "Digite o primeiro numero",
               "Digite o segundo numero");
 
-          result = calc.subtrai(numbers[0], numbers[1]);
+          result = calc.subtrair(numbers[0], numbers[1]);
           System.out.println("Resultado da subtracao: " + result.getValor());
           waitForEnter();
           break;
@@ -142,7 +142,7 @@ public class ClienteCalculadora {
           break;
 
         case 7:
-          System.out.println("PORCENTAGEM");
+          System.out.println("PORCENTAGEM RELATIVA");
           break;
 
         case 8:
@@ -163,6 +163,10 @@ public class ClienteCalculadora {
 
         case 12:
           System.out.println("CONVERSAO KILOMETROS -> METROS ");
+          break;
+
+        case 13:
+          System.out.println("CONVERSAO PORCENTAGEM EM DECIMAL ");
           break;
 
       }

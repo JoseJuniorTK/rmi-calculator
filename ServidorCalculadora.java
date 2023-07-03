@@ -11,9 +11,13 @@ public class ServidorCalculadora {
           .exportObject(calc, 0);
       //Registra (binds) o stub no registry
       LocateRegistry.createRegistry(1099);
+
       Registry registry = LocateRegistry.getRegistry();
+
       registry.bind("calculadora", stub);
+
       System.out.println("Servidor iniciado.");
+      
     } catch (Exception e) {
           System.err.println("Ocorreu um erro no servidor: " +
                              e.toString());
