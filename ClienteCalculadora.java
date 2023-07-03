@@ -23,13 +23,14 @@ public class ClienteCalculadora {
       // A partir deste momento, chamadas à Caluladora podem ser
       // feitas como qualquer chamada a métodos
 
+      
       int choice = -1;
-
       do {
-
+        
         showMainMenu();
         choice = reader.nextInt();
         calculate(choice, calc);
+        choice = -1;
 
       } while (choice != 0);
       /*
@@ -82,13 +83,13 @@ public class ClienteCalculadora {
   }
 
   private static Numero[] genericOperationsMenu(String title, String firstInput, String secondInput) {
-    System.out.println("SOMA");
+    System.out.println(title);
     System.out.println("================");
 
-    System.out.print("Digite o primeiro numero: ");
+    System.out.print(firstInput);
     Numero num1 = new NumeroImpl(reader.nextInt());
 
-    System.out.print("Digite o segundo numero: ");
+    System.out.print(secondInput);
     Numero num2 = new NumeroImpl(reader.nextInt());
     System.out.println("================");
 
@@ -106,8 +107,8 @@ public class ClienteCalculadora {
         case 1:
           numbers = genericOperationsMenu(
               "SOMA",
-              "Digite o primeiro numero",
-              "Digite o segundo numero");
+              "Digite o primeiro numero: ",
+              "Digite o segundo numero: ");
 
           result = calc.somar(numbers[0], numbers[1]);
           System.out.println("Resultado da soma: " + result.getValor());
@@ -117,8 +118,8 @@ public class ClienteCalculadora {
         case 2:
           numbers = genericOperationsMenu(
               "SUBTRACAO",
-              "Digite o primeiro numero",
-              "Digite o segundo numero");
+              "Digite o primeiro numero: ",
+              "Digite o segundo numero: ");
 
           result = calc.subtrair(numbers[0], numbers[1]);
           System.out.println("Resultado da subtracao: " + result.getValor());
@@ -126,7 +127,14 @@ public class ClienteCalculadora {
           break;
 
         case 3:
-          System.out.println("DIVISAO");
+          numbers = genericOperationsMenu(
+              "DIVISAO",
+              "Digite o numerador: ",
+              "Digite o denominador: ");
+
+          result = calc.dividir(numbers[0], numbers[1]);
+          System.out.println("Resultado da divisao: " + result.getValor());
+          waitForEnter();
           break;
 
         case 4:
