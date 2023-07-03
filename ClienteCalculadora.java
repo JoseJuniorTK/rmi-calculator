@@ -23,10 +23,9 @@ public class ClienteCalculadora {
       // A partir deste momento, chamadas à Caluladora podem ser
       // feitas como qualquer chamada a métodos
 
-      
       int choice = -1;
       do {
-        
+
         showMainMenu();
         choice = reader.nextInt();
         calculate(choice, calc);
@@ -88,10 +87,13 @@ public class ClienteCalculadora {
 
     System.out.print(firstInput);
     Numero num1 = new NumeroImpl(reader.nextInt());
+    Numero num2 = null;
 
-    System.out.print(secondInput);
-    Numero num2 = new NumeroImpl(reader.nextInt());
-    System.out.println("================");
+    if (!secondInput.equals("")) {
+      System.out.print(secondInput);
+      num2 = new NumeroImpl(reader.nextInt());
+      System.out.println("================");
+    }
 
     Numero[] numbers = { num1, num2 };
 
@@ -138,15 +140,36 @@ public class ClienteCalculadora {
           break;
 
         case 4:
-          System.out.println("MULTIPLICACAO");
+          numbers = genericOperationsMenu(
+              "MULTIPLICACAO",
+              "Digite o primeiro numero: ",
+              "Digite o segundo numero: ");
+
+          result = calc.multiplicar(numbers[0], numbers[1]);
+          System.out.println("Resultado da multiplicacao: " + result.getValor());
+          waitForEnter();
           break;
 
         case 5:
-          System.out.println("POTENCIA");
+          numbers = genericOperationsMenu(
+              "POTENCIA",
+              "Digite a base: ",
+              "Digite o expoente: ");
+
+          result = calc.potencia(numbers[0], numbers[1]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 6:
-          System.out.println("RAIZ QUADRADA");
+          numbers = genericOperationsMenu(
+              "RAIZ QUADRADA",
+              "Digite o numero: ",
+              "");
+
+          result = calc.raizQuadrada(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 7:
