@@ -173,33 +173,82 @@ public class ClienteCalculadora {
           break;
 
         case 7:
-          System.out.println("PORCENTAGEM RELATIVA");
+          numbers = genericOperationsMenu(
+              "PORCENTAGEM RELATIVA",
+              "Digite o numero: ",
+              "Digite a percentual: ");
+
+          result = calc.porcentagemDe(numbers[0], numbers[1]);
+          System.out.println(numbers[1].getValor() + "% de " + numbers[0].getValor() + " eh: " + result.getValor());
+          waitForEnter();
           break;
 
         case 8:
-          System.out.println("LOGARITMO");
+          numbers = genericOperationsMenu(
+              "LOGARITMO",
+              "Digite a: ",
+              "Digite b: ");
+
+          result = calc.logaritmo(numbers[0], numbers[1]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 9:
-          System.out.println("CONVERSAO REAL -> DOLAR");
+          numbers = genericOperationsMenu(
+              "CONVERSAO REAL -> DOLAR",
+              "Quantidade de reais: ",
+              "");
+
+          result = calc.realParaDolar(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 10:
-          System.out.println("CONVERSAO DOLAR -> REAL");
+          numbers = genericOperationsMenu(
+              "CONVERSAO DOLAR -> REAL",
+              "Quantidade de dolares: ",
+              "");
+
+          result = calc.dolarParaReal(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 11:
-          System.out.println("CONVERSAO METROS -> KILOMETROS");
+           numbers = genericOperationsMenu(
+              "CONVERSAO METROS -> KILOMETROS",
+              "Metros: ",
+              "");
+
+          result = calc.metroParaKilometro(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 12:
-          System.out.println("CONVERSAO KILOMETROS -> METROS ");
+          numbers = genericOperationsMenu(
+              "CONVERSAO KILOMETROS -> METROS ",
+              "Kilometros: ",
+              "");
+
+          result = calc.kilometroParaMetro(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
           break;
 
         case 13:
-          System.out.println("CONVERSAO PORCENTAGEM EM DECIMAL ");
-          break;
+          System.out.println();
+          numbers = genericOperationsMenu(
+              "CONVERSAO PORCENTAGEM EM DECIMAL ",
+              "Percentual: ",
+              "");
 
+          result = calc.porcentualParaDecimal(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
+          break;
       }
 
     } catch (RemoteException e) {
