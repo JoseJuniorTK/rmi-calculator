@@ -1,6 +1,7 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
+
 public interface Calculadora extends Remote {
         public Numero somar(Numero a, Numero b)
                         throws RemoteException;
@@ -40,4 +41,14 @@ public interface Calculadora extends Remote {
 
         public Numero porcentagemDe(Numero a, Numero percentual)
                         throws RemoteException;
+        public Numero restoDivisão(Numero a, Numero b)
+                throws RemoteException;
+        public Numero calculaSeno(Numero a)
+                throws RemoteException;
+        public Numero calculaCosseno(Numero a)
+                throws RemoteException;
+        public Numero calculaTangente(Numero a)
+                throws RemoteException;
+        public Numero calculaFatorial(Numero a)
+                throws RemoteException;
 }
