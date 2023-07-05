@@ -15,8 +15,8 @@ public class ClienteCalculadora {
 
     try {
 
-      String IP_SERVIDOR = "127.0.0.1"; // endereco do servidor na rede
-      int PORTA_SERVIDOR = 1099; // porta padrao
+      String IP_SERVIDOR = args[0]; // endereco do servidor na rede
+      int PORTA_SERVIDOR = Integer.parseInt(args[1]); // porta padrao
 
       // Localiza o registry. É possível usar endereço/IP porta
       Registry registry = LocateRegistry.getRegistry(IP_SERVIDOR, PORTA_SERVIDOR);
