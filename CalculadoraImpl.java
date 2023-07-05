@@ -139,12 +139,13 @@ public class CalculadoraImpl implements Calculadora {
     }
 
 
-    public Numero calculaFatorial(Numero a){
-        int Fat = 1;
-        for(int i = 1; i <= a.getValor(); i++){
-            Fat = Fat*i;
-        }
-        return new NumeroImpl(Fat);
-    };
+    public Numero calculaFatorial(Numero a) {
+    int Fat = 1;
+    for (int i = 1; i <= a.getValor(); i++) {
+        Fat = Fat * i;
+    }
+    return new NumeroImpl(Fat);
+}
+
 
 }
