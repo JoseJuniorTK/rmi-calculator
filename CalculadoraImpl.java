@@ -66,6 +66,29 @@ public class CalculadoraImpl implements Calculadora {
     @Override
     public Numero porcentagemDe(Numero a, Numero percentual) throws RemoteException {
         return new NumeroImpl((percentual.getValor() * a.getValor()) / 100);
+    }
+    @Override
+    public Numero restoDivisão(Numero a, Numero b){
+        return new NumeroImpl(a.getValor() % b.getValor());
+    }
+    @Override
+    public Numero calculaSeno(Numero a){
+        return new NumeroImpl(Math.sin(Math.toRadians(a.getValor())));
+    }
+    @Override
+    public Numero calculaCosseno(Numero a){
+        return new NumeroImpl(Math.cos(Math.toRadians(a.getValor())));
+    }
+    @Override
+    public Numero calculaTangente(Numero a){
+        return new NumeroImpl(Math.tan(Math.toRadians(a.getValor())));
+    }
+    public Numero calculaFatorial(Numero a){
+        int Fat = 1;
+        for(int i = 1; i <= a.getValor(); i++){
+            Fat = Fat*i;
+        }
+        return new NumeroImpl(Fat);
     };
 
 }

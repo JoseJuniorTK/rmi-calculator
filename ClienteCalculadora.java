@@ -78,6 +78,11 @@ public class ClienteCalculadora {
     System.out.println("11 - CONVERSAO METROS -> KILOMETROS");
     System.out.println("12 - CONVERSAO KILOMETROS -> METROS");
     System.out.println("13 - CONVERSAO PORCENTAGEM -> DECIMAL ");
+    System.out.println("14 - RESTO DA DIVISÃO");
+    System.out.println("15 - SENO");
+    System.out.println("16 - COSSENO");
+    System.out.println("17 - TANGENTE");
+    System.out.println("18 - FATORIAL");
     System.out.println("=====================================");
   }
 
@@ -246,6 +251,66 @@ public class ClienteCalculadora {
               "");
 
           result = calc.porcentualParaDecimal(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
+          break;
+
+        case 14:
+          System.out.println();
+          numbers = genericOperationsMenu(
+                  "RESTO DA DIVISAO",
+                  "Digite o numerador: ",
+                  "Digite o denominador: ");
+
+          result = calc.restoDivisão(numbers[0], numbers[1]);
+          System.out.println("Resto da divisao: " + result.getValor());
+          waitForEnter();
+          break;
+
+        case 15:
+          System.out.println();
+          numbers = genericOperationsMenu(
+                  "SENO ",
+                  "Ângulo em graus: ",
+                  "");
+
+          result = calc.calculaSeno(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
+          break;
+
+        case 16:
+          System.out.println();
+          numbers = genericOperationsMenu(
+                  "COSSENO ",
+                  "Ângulo em graus: ",
+                  "");
+
+          result = calc.calculaCosseno(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
+          break;
+
+        case 17:
+          System.out.println();
+          numbers = genericOperationsMenu(
+                  "TANGENTE ",
+                  "Ângulo em graus: ",
+                  "");
+
+          result = calc.calculaTangente(numbers[0]);
+          System.out.println("Resultado: " + result.getValor());
+          waitForEnter();
+          break;
+
+        case 18:
+          System.out.println();
+          numbers = genericOperationsMenu(
+                  "FATORIAL ",
+                  "Número inteiro: ",
+                  "");
+
+          result = calc.calculaFatorial(numbers[0]);
           System.out.println("Resultado: " + result.getValor());
           waitForEnter();
           break;
