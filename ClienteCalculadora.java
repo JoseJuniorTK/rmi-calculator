@@ -83,6 +83,16 @@ public class ClienteCalculadora {
     System.out.println("16 - COSSENO");
     System.out.println("17 - TANGENTE");
     System.out.println("18 - FATORIAL");
+    System.out.println("19 - CONVERSAO KILOGRAMAS -> GRAMAS ");
+    System.out.println("20 - CONVERSAO GRAMAS -> KILOGRAMAS ");
+    System.out.println("21 - CONVERSAO CELSIUS -> FAHRENHEIT ");
+    System.out.println("22 - CONVERSAO FAHRENHEIT -> CELSIUS ");
+    System.out.println("23 - CONVERSAO LITROS -> MILILITROS ");
+    System.out.println("24 - CONVERSAO MILILITROS -> LITROS ");
+    System.out.println("25 - CONVERSAO HORAS -> MINUTOS ");
+    System.out.println("26 - CONVERSAO MINUTOS -> HORAS ");
+    System.out.println("27 - CONVERSAO CELSIUS -> KELVIN ");
+    System.out.println("28 - CONVERSAO KELVIN -> CELSIUS ");
     System.out.println("=====================================");
   }
 
@@ -314,6 +324,118 @@ public class ClienteCalculadora {
           System.out.println("Resultado: " + result.getValor());
           waitForEnter();
           break;
+
+          case 19:
+                numbers = genericOperationsMenu(
+                        "KILOGRAMA -> GRAMA",
+                        "KILOgramas: ",
+                        "");
+
+                result = calc.kilogramaParaGrama(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+           case 20:
+                numbers = genericOperationsMenu(
+                        "GRAMA -> KILOGRAMA",
+                        "Gramas: ",
+                        "");
+
+                result = calc.gramaParaKilograma(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 21:
+                numbers = genericOperationsMenu(
+                        "CELSIUS -> FAHRENHEIT",
+                        "Graus Celsius: ",
+                        "");
+
+                result = calc.celsiusParaFahrenheit(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 22:
+                numbers = genericOperationsMenu(
+                        "FAHRENHEIT -> CELSIUS",
+                        "Graus Fahrenheit: ",
+                        "");
+
+                result = calc.fahrenheitParaCelsius(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 23:
+                numbers = genericOperationsMenu(
+                        "LITROS -> MILILITROS",
+                        "Litros: ",
+                        "");
+
+                result = calc.litrosParaMililitros(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 24:
+                numbers = genericOperationsMenu(
+                        "MILILITROS -> LITROS",
+                        "Mililitros: ",
+                        "");
+
+                result = calc.mililitrosParaLitros(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 25:
+                numbers = genericOperationsMenu(
+                        "HORAS -> MINUTOS",
+                        "Horas: ",
+                        "");
+
+                result = calc.horasParaMinutos(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 26:
+                numbers = genericOperationsMenu(
+                        "MINUTOS -> HORAS",
+                        "Minutos: ",
+                        "");
+
+                result = calc.minutosParaHoras(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 27:
+                numbers = genericOperationsMenu(
+                        "CELSIUS -> KELVIN",
+                        "Graus Celsius: ",
+                        "");
+
+                result = calc.celsiusParaKelvin(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+            case 28:
+                numbers = genericOperationsMenu(
+                        "KELVIN -> CELSIUS",
+                        "Kelvin: ",
+                        "");
+
+                result = calc.kelvinParaCelsius(numbers[0]);
+                System.out.println("Resultado: " + result.getValor());
+                waitForEnter();
+                break;
+
+
       }
 
     } catch (RemoteException e) {

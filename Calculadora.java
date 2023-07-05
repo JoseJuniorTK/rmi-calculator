@@ -51,4 +51,25 @@ public interface Calculadora extends Remote {
                 throws RemoteException;
         public Numero calculaFatorial(Numero a)
                 throws RemoteException;
+                
+    public Numero kilogramaParaGrama(Numero kilogramas) throws RemoteException;
+
+    public Numero gramaParaKilograma(Numero gramas) throws RemoteException;
+
+    public Numero celsiusParaFahrenheit(Numero celsius) throws RemoteException;
+
+    public Numero fahrenheitParaCelsius(Numero fahrenheit) throws RemoteException;
+
+    public Numero litrosParaMililitros(Numero litros) throws RemoteException;
+
+    public Numero mililitrosParaLitros(Numero mililitros) throws RemoteException;
+
+    public Numero horasParaMinutos(Numero horas) throws RemoteException;
+
+    public Numero minutosParaHoras(Numero minutos) throws RemoteException;
+
+    public Numero celsiusParaKelvin(Numero celsius) throws RemoteException;
+
+    public Numero kelvinParaCelsius(Numero kelvin) throws RemoteException;
 }
+
